@@ -361,6 +361,12 @@ class IbTwsClient(EWrapper, EClient):
         self.reqFamilyCodes()
 
         if self._is_fa:
+            for i in range(0, 10):
+                logging.error(f"TRYING: requestFA({i})")
+                self.requestFA(i)
+                time.sleep(1)
+                logging.error(f"TRYIED: requestFA({i})")
+
             self.requestFA(1)  # request GROUPS.  See FaDataTypeEnum.
             #TODO: see https://github.com/deephaven-examples/deephaven-ib/issues/5
             self.requestFA(2)  # request PROFILE.  See FaDataTypeEnum.
