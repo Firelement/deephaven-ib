@@ -362,9 +362,8 @@ class IbTwsClient(EWrapper, EClient):
 
         if self._is_fa:
             self.requestFA(1)  # request GROUPS.  See FaDataTypeEnum.
-            #TODO: see https://github.com/deephaven-examples/deephaven-ib/issues/32
             #TODO: see https://github.com/deephaven-examples/deephaven-ib/issues/5
-            # self.requestFA(2)  # request PROFILE.  See FaDataTypeEnum.
+            self.requestFA(2)  # request PROFILE.  See FaDataTypeEnum.
             self.requestFA(3)  # request ACCOUNT ALIASES.  See FaDataTypeEnum.
 
             self.request_account_pnl("All")
